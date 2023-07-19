@@ -88,7 +88,7 @@ public class UserController {
 
 
 
-    // UPDATE USER BY ID FROM DATABASE - UPDATE REST API -- Nhat
+    // UPDATE USER BY ID FROM DATABASE - UPDATE REST API -- NhatCoiiii
     @PutMapping ("{id}")
     public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody User user) {
         User userUpdate = userServiceImpl.updateUser(id, user);
