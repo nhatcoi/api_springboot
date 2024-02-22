@@ -1,6 +1,5 @@
 package com.example.demospringboot.repository;
 
-import com.example.demospringboot.dto.UserRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.example.demospringboot.entity.User;
@@ -8,6 +7,5 @@ import com.example.demospringboot.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // all CRUD database methods.
-
 }
 

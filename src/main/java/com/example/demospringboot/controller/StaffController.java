@@ -3,8 +3,6 @@ package com.example.demospringboot.controller;
 
 import com.example.demospringboot.dto.StaffRequest;
 import com.example.demospringboot.entity.Staff;
-import com.example.demospringboot.entity.User;
-import com.example.demospringboot.repository.UserRepository;
 import com.example.demospringboot.service.impl.StaffServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -55,13 +52,14 @@ public class StaffController {
 
 
     // TODO UPDATE API Staff by ID - get data and PUT them again - U
-    @PutMapping("{id}")
+    @PutMapping("{id_staff}")
     public ResponseEntity<?> updateStaff(@PathVariable Long id_staff, @RequestBody Staff staff) {
         Staff staffUpdate = staffService.updateStaff(id_staff, staff);
         return new ResponseEntity<>(staffUpdate, HttpStatus.OK);
     }
 
     // TODO DELETE API Staff by ID - DELETE data from db - D
+    @DeleteMapping("{id_staff}")
     public ResponseEntity<?> deleteStaffById(@PathVariable Long id_staff) {
         staffService.deleteStaffByIdStaff(id_staff);
         return new ResponseEntity<>("Complete delete id", HttpStatus.OK);
